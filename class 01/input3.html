@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" id="nur" placeholder="enter here" pattern="[0-9]" required>
+        <input type="button" value="result" onclick="calc()">
+        <input type="text" readonly id="moha" placeholder="result here">
+    </form>
+    <script>
+        function calc() {
+        var inch = document.getElementById("nur").value;
+        var result = inch * 2.54;
+        var html = inch + " inch = " + result + "centimeter";
+        document.getElementById("moha").value = html;
+    }
+    </script>
+</body>
+</html>

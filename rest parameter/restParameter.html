@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rest</title>
+</head>
+<body>
+    <h3>A rest parameter</h3>
+    <p id="dom"></p>
+    <p id="min"></p>
+    <p id="max"></p>
+
+        <!-- <script>
+            function numbers(...c){
+                let total = 0;
+                c.forEach(n=> total+=n);
+                document.write(total);
+                document.write(Math.min(...c));
+                document.write(Math.max(...c));
+                alert(total);
+                alert(Math.min(...c))
+                alert(Math.max(...c))
+            }
+
+            numbers(3,5,1,7);
+        </script> -->
+        <script>
+            
+            function numbers(...a){
+                let total = 0;
+                a.forEach(n=> total+=n);
+                document.getElementById("dom").innerHTML=total;
+                document.getElementById("min").innerHTML=(Math.min(...a));
+                document.getElementById("max").innerHTML=(Math.max(...a));
+            }
+            numbers(1,2,3,8,4);
+        </script>
+</body>
+</html>

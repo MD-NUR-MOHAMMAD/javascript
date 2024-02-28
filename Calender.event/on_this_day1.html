@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="date" name="" id="" onchange="getHistory(this)">
+    <hr>
+    <div id="eventscontainer"></div>
+    <script>
+        function show(data) {
+            let html = `<h1>${data.date}</h1><hr>`;
+            data.events.forEach(ev => {
+                html += `<div><h3>${ev.year}</h3><p>${ev.description}</p></div>`;
+            });
+            document.getElementById("eventscontainer").innerHTML = html;
+
+        }
+        function getHistory(t){
+            console.log(t.value);
+            let arr = t.value.split("-");
+            console.log(arr);
+            var url = 'https://byabbe.se/on-this-day/'+ parseInt(arr[1])+'/'+parseInt(arr[2])+'/events.json';
+            console.log(url);
+            fetch(url)
+            .then(res => res.json())
+            .then(json => show(json))
+        }
+    </script>
+</body>
+
+</html>
